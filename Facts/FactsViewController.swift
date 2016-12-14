@@ -1,10 +1,3 @@
-//
-//  FactsViewController.swift
-//  Facts
-//
-//  Created by Dave Gumba on 2016-12-12.
-//  Copyright © 2016 Dave's Organization. All rights reserved.
-//
 
 import UIKit
 

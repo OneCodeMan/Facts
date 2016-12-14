@@ -13,7 +13,7 @@ class ShowFactViewController: UIViewController, FactGetterDelegate, UITextFieldD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fact = FactGetter(delegate: self) // but the delegate is itself?
+        fact = FactGetter(delegate: self)
         
         fact.getFact(factNum)
         spinner?.startAnimating()
@@ -34,11 +34,11 @@ class ShowFactViewController: UIViewController, FactGetterDelegate, UITextFieldD
     // MARK - Gesture
 
     @IBAction func swipeRightToFactsView(_ sender: UISwipeGestureRecognizer) {
-        let transition = CATransition()
-        transition.duration = 0.6
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromLeft
-        view.window!.layer.add(transition, forKey: kCATransition)
+        let factToFactsViewTransition = CATransition()
+        factToFactsViewTransition.duration = 0.6
+        factToFactsViewTransition.type = kCATransitionPush
+        factToFactsViewTransition.subtype = kCATransitionFromLeft
+        view.window!.layer.add(factToFactsViewTransition, forKey: kCATransition)
         self.dismiss(animated: true, completion: nil)
     }
  

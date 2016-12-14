@@ -27,7 +27,6 @@ class FactGetter {
             if let networkError = error {
                 self.delegate.didNotGetFact(networkError as NSError)
             } else {
-                print("Success")
                 
                 do {
                     // turn the JSON into a dict
@@ -38,6 +37,7 @@ class FactGetter {
                     let fact = Fact(factData: factData) // instantiate a Fact with the data we have
                     
                     self.delegate.didGetFact(fact)
+                    print("got fact")
                 } catch let jsonError as NSError {
                     self.delegate.didNotGetFact(jsonError)
                 }
