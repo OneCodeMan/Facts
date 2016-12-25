@@ -17,6 +17,7 @@ class ShowFactViewController: UIViewController, FactGetterDelegate, UITextFieldD
         
         fact.getFact(factNum)
         spinner?.startAnimating()
+        
     }
     
     // MARK - Delegate stuff

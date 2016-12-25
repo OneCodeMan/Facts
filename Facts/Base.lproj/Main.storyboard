@@ -86,7 +86,6 @@
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="showFact:" destination="ne7-x7-JAh" eventType="touchUpInside" id="BGg-t6-Fup"/>
                                     <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ShowFactSegue" id="bXf-Qx-NSV"/>
                                 </connections>
                             </button>
@@ -97,6 +96,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="qro-Dr-JgH" id="5DV-7N-p2e"/>
                         <outlet property="factInput" destination="Shl-of-Lcn" id="P1N-Fs-aE9"/>
+                        <outlet property="showFactButton" destination="LgY-lp-rKs" id="ONO-rg-5Vl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7U-cq-phV" userLabel="First Responder" sceneMemberID="firstResponder"/>
