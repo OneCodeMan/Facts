@@ -3,7 +3,7 @@ import UIKit
 
 class ShowFactViewController: UIViewController, FactGetterDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
-    var fact: FactGetter! // this is the delegate
+    var fact: FactGetter!
     var factNum: String = "0"
 
     @IBOutlet weak var factTextDisplay: UILabel!
@@ -22,13 +22,14 @@ class ShowFactViewController: UIViewController, FactGetterDelegate, UITextFieldD
     // MARK - Delegate stuff
 
     func didGetFact(_ fact: Fact) {
-        spinner.stopAnimating()
         factTextDisplay.text = fact.factText
+        spinner.stopAnimating()
         print("success from didGetFact")
     }
     
     func didNotGetFact(_ error: NSError) {
-        print("ERROR")
+        factTextDisplay.text = "There was an error";
+        spinner.stopAnimating()
     }
     
     // MARK - Gesture

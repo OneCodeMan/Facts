@@ -1,20 +1,32 @@
 
 import UIKit
 
-class FactsViewController: UIViewController, UIGestureRecognizerDelegate {
+class FactsViewController: UIViewController, UIGestureRecognizerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var factInput: UITextField!
     @IBOutlet var backgroundView: UIView!
+    
     
     @IBAction func showFact(_ sender: UIButton) {
        print("done button pressed")
     }
     
+    func removeDefaultInput(textField: UITextField) -> Void {
+        factInput.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        factInput.text = "0"
+        
+        factInput.addTarget(self, action: Selector(("removeDefaultInput:")), for: UIControlEvents.editingDidBegin)
 
+        
         keyboardDownOnTapGesture()
     }
+    
+    
 
     
     // MARK: - Navigation
