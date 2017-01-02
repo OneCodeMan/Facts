@@ -16,8 +16,18 @@ class ShowFactViewController: UIViewController, FactGetterDelegate, UITextFieldD
         fact = FactGetter(delegate: self)
         
         fact.getFact(factNum)
+        print("Called getFact from viewDidLoad()")
         spinner?.startAnimating()
         
+    }
+    
+    // this isn't working
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 1.5, animations: {
+            self.factTextDisplay.alpha = 1.0
+        })
     }
     
     // MARK - Delegate stuff

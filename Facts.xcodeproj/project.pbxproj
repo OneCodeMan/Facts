@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1624F5241E19D2090075A02A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1624F5231E19D2090075A02A /* Montserrat-Bold.ttf */; };
 		16F991981DFE7E1500CC7B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F991971DFE7E1500CC7B74 /* AppDelegate.swift */; };
 		16F9919A1DFE7E1500CC7B74 /* ShowFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F991991DFE7E1500CC7B74 /* ShowFactViewController.swift */; };
 		16F9919D1DFE7E1500CC7B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16F9919B1DFE7E1500CC7B74 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1624F5231E19D2090075A02A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		16F991941DFE7E1500CC7B74 /* Facts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Facts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F991971DFE7E1500CC7B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16F991991DFE7E1500CC7B74 /* ShowFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowFactViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		16F9918B1DFE7E1500CC7B74 = {
 			isa = PBXGroup;
 			children = (
+				1624F5231E19D2090075A02A /* Montserrat-Bold.ttf */,
 				16F991961DFE7E1500CC7B74 /* Facts */,
 				16F991951DFE7E1500CC7B74 /* Products */,
 			);
@@ -141,6 +144,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1624F5241E19D2090075A02A /* Montserrat-Bold.ttf in Resources */,
 				16F991A21DFE7E1500CC7B74 /* LaunchScreen.storyboard in Resources */,
 				16F9919F1DFE7E1500CC7B74 /* Assets.xcassets in Resources */,
 				16F9919D1DFE7E1500CC7B74 /* Main.storyboard in Resources */,

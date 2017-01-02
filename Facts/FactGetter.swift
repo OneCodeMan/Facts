@@ -37,7 +37,7 @@ class FactGetter {
                     let fact = Fact(factData: factData) // instantiate a Fact with the data we have
                     
                     self.delegate.didGetFact(fact)
-                    print("got fact")
+                    print("got fact from the API.")
                 } catch let jsonError as NSError {
                     self.delegate.didNotGetFact(jsonError)
                 }

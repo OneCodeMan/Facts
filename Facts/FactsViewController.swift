@@ -1,7 +1,4 @@
-// TODO: Implement multi-threading to display the fact faster
-// TODO: Make a sick fade-in animation when displaying the fact. Sweep 'em off their feet, Dave!
 // TODO: Sick UI when displaying fact (meaning you have to learn importing fonts, color of view backgrounds,etc)
-// TODO: Add more animations (only if necessary. don't overdo it!)
 
 import UIKit
 
