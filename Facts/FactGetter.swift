@@ -1,49 +1,18 @@
 
 import Foundation
-
-// this is the "contract"
-protocol FactGetterDelegate {
-    func didGetFact(_ fact: Fact)
-    func didNotGetFact(_ error: NSError)
-}
+import Alamofire
 
 // this is the delegator
 class FactGetter {
+    static let shared = FactGetter()
     
-    fileprivate var delegate: FactGetterDelegate
-    
-    init(delegate: FactGetterDelegate) {
-        self.delegate = delegate
-    }
-    
-    func getFact(_ fact: String) {
-        
-        let session = URLSession.shared
-        
-        let factRequestURL = URL(string: "http://numbersapi.com/\(fact)?json")
-        
-        let dataTask = session.dataTask(with: factRequestURL!, completionHandler: {
-            (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            if let networkError = error {
-                self.delegate.didNotGetFact(networkError as NSError)
-            } else {
-                
-                do {
-                    // turn the JSON into a dict
-                    let factData = try JSONSerialization.jsonObject(
-                        with: data!,
-                    options: .mutableContainers) as! [String: AnyObject]
-                    
-                    let fact = Fact(factData: factData) // instantiate a Fact with the data we have
-                    
-                    self.delegate.didGetFact(fact)
-                    print("got fact from the API.")
-                } catch let jsonError as NSError {
-                    self.delegate.didNotGetFact(jsonError)
-                }
+    func getFact(_ fact: String, _ completion : ((_ fact : Fact) -> Void)? = nil) {
+        let url = URL(string: "http://numbersapi.com/\(fact)?json")
+        Alamofire.request(url!).responseJSON { (response) in
+            if let factData = response.result.value as? [String : AnyObject] {
+                let fact = Fact(factData: factData)
+                completion?(fact)
             }
-        } )
-        
-        dataTask.resume()
+        }
     }
 }

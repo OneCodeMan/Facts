@@ -17,6 +17,8 @@ class FactsViewController: UIViewController, UIGestureRecognizerDelegate, UIText
         factInput.addTarget(self, action: #selector(checkIfInputIsEmpty(textField:)), for: UIControlEvents.allEditingEvents)
         
         keyboardDownOnTapGesture()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     

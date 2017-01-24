@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ShowFactViewController: UIViewController, FactGetterDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate {
+class ShowFactViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     
     var fact: FactGetter!
     var factNum: String = "0"
@@ -13,11 +13,16 @@ class ShowFactViewController: UIViewController, FactGetterDelegate, UITextFieldD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fact = FactGetter(delegate: self)
+        FactGetter.shared.getFact(factNum) { (fact) in
+            self.factTextDisplay.text = fact.factText
+            self.spinner.stopAnimating()
+            print("success from didGetFact")
+        }
         
-        fact.getFact(factNum)
         print("Called getFact from viewDidLoad()")
         spinner?.startAnimating()
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
     }
     
@@ -46,12 +51,12 @@ class ShowFactViewController: UIViewController, FactGetterDelegate, UITextFieldD
     // MARK - Gesture
 
     @IBAction func swipeRightToFactsView(_ sender: UISwipeGestureRecognizer) {
-        let factToFactsViewTransition = CATransition()
-        factToFactsViewTransition.duration = 0.6
-        factToFactsViewTransition.type = kCATransitionPush
-        factToFactsViewTransition.subtype = kCATransitionFromLeft
-        view.window!.layer.add(factToFactsViewTransition, forKey: kCATransition)
-        self.dismiss(animated: true, completion: nil)
+//        let factToFactsViewTransition = CATransition()
+//        factToFactsViewTransition.duration = 0.6
+//        factToFactsViewTransition.type = kCATransitionPush
+//        factToFactsViewTransition.subtype = kCATransitionFromLeft
+//        view.window!.layer.add(factToFactsViewTransition, forKey: kCATransition)
+//        self.dismiss(animated: true, completion: nil)
     }
  
 
